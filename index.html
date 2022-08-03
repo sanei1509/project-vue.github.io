@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Introducción a Vue</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <nav class="nav-bar"></nav>
+      <!-- CARRITO -->
+
+      <div class="cart">Mi carrito ({{ cart.length }})</div>
+      <div class="container-cart-button">
+        <button class="decr-button" @click="removeOfCart()">-</button>
+        <button class="incr-button" @click="updateCart()">+</button>
+      </div>
+
+      <Producto :pro="pro" @add-to-cart="updateCart"></Producto>
+      <!-- <Producto></Producto> -->
+      <!-- <Producto></Producto> -->
+    </div>
+
+    <!-- IMPORTAMOS JS -->
+    <script src="./main.js"></script>
+    <!-- IMPORTAMOS COMPONENTES -->
+    <script src="./components/Producto.js"></script>
+    <script src="./components/ReviewProduct.js"></script>
+    <!-- <script src=".//components/ProductDetails.js"></script> -->
+    <script src="./components/ReviewsList.js"></script>
+    <!-- Montando la aplicacion -->
+    <script>
+      const mountApp = app.mount("#app");
+    </script>
+  </body>
+</html>
